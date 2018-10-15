@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2018 12:51:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Payment" table="payment" catalog="matchme" optimistic-lock="version">
+        <id name="idPayment" type="java.lang.Integer">
+            <column name="idPayment" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="pojo.Customer" fetch="select">
+            <column name="Customer_idCustomer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="paytype" class="pojo.Paytype" fetch="select">
+            <column name="PayType_idPayType" not-null="true" />
+        </many-to-one>
+        <property name="payDate" type="timestamp">
+            <column name="pay_date" length="19" />
+        </property>
+        <property name="payValue" type="java.lang.Double">
+            <column name="pay_value" precision="22" scale="0" />
+        </property>
+        <property name="payStatus" type="java.lang.Integer">
+            <column name="pay_status" />
+        </property>
+        <property name="discription" type="string">
+            <column name="Discription" />
+        </property>
+        <property name="paymentcol" type="string">
+            <column name="Paymentcol" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

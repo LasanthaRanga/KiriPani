@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2018 12:51:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Chat" table="chat" catalog="matchme" optimistic-lock="version">
+        <id name="idChat" type="java.lang.Integer">
+            <column name="idChat" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customerByChatTo" class="pojo.Customer" fetch="select">
+            <column name="Chat_To" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customerByChatFrom" class="pojo.Customer" fetch="select">
+            <column name="Chat_From" not-null="true" />
+        </many-to-one>
+        <many-to-one name="request" class="pojo.Request" fetch="select">
+            <column name="Request_idRequest" not-null="true" />
+        </many-to-one>
+        <property name="dayTime" type="timestamp">
+            <column name="day_time" length="19" />
+        </property>
+        <property name="message" type="string">
+            <column name="Message" />
+        </property>
+        <property name="chatStatus" type="java.lang.Integer">
+            <column name="Chat_status" />
+        </property>
+    </class>
+</hibernate-mapping>

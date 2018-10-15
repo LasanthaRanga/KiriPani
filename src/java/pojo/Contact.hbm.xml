@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2018 12:51:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Contact" table="contact" catalog="matchme" optimistic-lock="version">
+        <id name="idContact" type="java.lang.Integer">
+            <column name="idContact" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="pojo.Customer" fetch="select">
+            <column name="Customer_idCustomer" not-null="true" />
+        </many-to-one>
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="mobile" length="45" />
+        </property>
+        <property name="imo" type="string">
+            <column name="imo" length="45" />
+        </property>
+        <property name="viber" type="string">
+            <column name="viber" length="45" />
+        </property>
+        <property name="fb" type="string">
+            <column name="fb" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

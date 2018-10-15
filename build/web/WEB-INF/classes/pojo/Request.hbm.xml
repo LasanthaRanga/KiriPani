@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2018 12:51:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Request" table="request" catalog="matchme" optimistic-lock="version">
+        <id name="idRequest" type="java.lang.Integer">
+            <column name="idRequest" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customerByRequestTo" class="pojo.Customer" fetch="select">
+            <column name="Request_To" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customerByRequestFrom" class="pojo.Customer" fetch="select">
+            <column name="Request_From" not-null="true" />
+        </many-to-one>
+        <property name="conferm" type="java.lang.Integer">
+            <column name="Conferm" />
+        </property>
+        <property name="confermDateTime" type="timestamp">
+            <column name="Conferm_date_time" length="19" />
+        </property>
+        <property name="requestDateTime" type="timestamp">
+            <column name="Request_date_time" length="19" />
+        </property>
+        <set name="chats" table="chat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Request_idRequest" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Chat" />
+        </set>
+    </class>
+</hibernate-mapping>

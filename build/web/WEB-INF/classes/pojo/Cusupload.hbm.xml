@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2018 12:51:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Cusupload" table="cusupload" catalog="matchme" optimistic-lock="version">
+        <id name="idCusUpload" type="java.lang.Integer">
+            <column name="idCusUpload" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="pojo.Customer" fetch="select">
+            <column name="Customer_idCustomer" not-null="true" />
+        </many-to-one>
+        <property name="cusUpPath" type="string">
+            <column name="cus_up_path" />
+        </property>
+        <property name="cusUpType" type="string">
+            <column name="cus_up_type" length="45" />
+        </property>
+        <property name="cusUpStatus" type="java.lang.Integer">
+            <column name="cus_up_status" />
+        </property>
+    </class>
+</hibernate-mapping>

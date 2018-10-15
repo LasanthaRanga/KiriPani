@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2018 12:51:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Customer" table="customer" catalog="matchme" optimistic-lock="version">
+        <id name="idCustomer" type="java.lang.Integer">
+            <column name="idCustomer" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customerstatus" class="pojo.Customerstatus" fetch="select">
+            <column name="CustomerStatus_idCustomerStatus" not-null="true" />
+        </many-to-one>
+        <property name="fullname" type="string">
+            <column name="fullname" />
+        </property>
+        <property name="addressLine1" type="string">
+            <column name="addressLine1" />
+        </property>
+        <property name="addressLine2" type="string">
+            <column name="addressLine2" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" />
+        </property>
+        <property name="discription" type="string">
+            <column name="discription" length="65535" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="155" />
+        </property>
+        <property name="pword" type="string">
+            <column name="pword" length="45" />
+        </property>
+        <property name="nic" type="string">
+            <column name="nic" length="45" />
+        </property>
+        <property name="gender" type="java.lang.Integer">
+            <column name="gender" />
+        </property>
+        <property name="confirmcode" type="string">
+            <column name="confirmcode" length="45" />
+        </property>
+        <property name="registerDate" type="date">
+            <column name="registerDate" length="10" />
+        </property>
+        <set name="cusuploads" table="cusupload" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Customer_idCustomer" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Cusupload" />
+        </set>
+        <set name="logins" table="login" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Customer_idCustomer" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Login" />
+        </set>
+        <set name="requestsForRequestTo" table="request" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Request_To" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Request" />
+        </set>
+        <set name="reviews" table="review" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Customer_idCustomer" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Review" />
+        </set>
+        <set name="requestsForRequestFrom" table="request" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Request_From" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Request" />
+        </set>
+        <set name="chatsForChatTo" table="chat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Chat_To" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Chat" />
+        </set>
+        <set name="payments" table="payment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Customer_idCustomer" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Payment" />
+        </set>
+        <set name="chatsForChatFrom" table="chat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Chat_From" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Chat" />
+        </set>
+        <set name="contacts" table="contact" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Customer_idCustomer" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Contact" />
+        </set>
+    </class>
+</hibernate-mapping>
