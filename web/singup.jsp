@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Register Customer</h1>
-        <h3>${error}</h3>
+        <!--<h3>${error}</h3>-->
 
         <form action="Singup" method="POST">
             <pre>
