@@ -42,13 +42,14 @@ Contributor(s):
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="matchme"/>
   <table-filter match-name="chat"/>
+  <table-filter match-name="contact"/>
+  <table-filter match-name="subscribe"/>
   <table-filter match-name="paytype"/>
-  <table-filter match-name="review"/>
   <table-filter match-name="customer"/>
   <table-filter match-name="payment"/>
-  <table-filter match-name="cusupload"/>
   <table-filter match-name="customerstatus"/>
-  <table-filter match-name="contact"/>
   <table-filter match-name="request"/>
+  <table-filter match-name="cusupload"/>
   <table-filter match-name="login"/>
+  <table-filter match-name="review"/>
 </hibernate-reverse-engineering>

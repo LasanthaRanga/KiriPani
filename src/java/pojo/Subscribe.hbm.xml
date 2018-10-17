@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 17, 2018 2:47:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Subscribe" table="subscribe" catalog="matchme" optimistic-lock="version">
+        <id name="idSubs" type="java.lang.Integer">
+            <column name="idSubs" />
+            <generator class="identity" />
+        </id>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+    </class>
+</hibernate-mapping>

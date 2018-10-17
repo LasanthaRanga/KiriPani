@@ -40,21 +40,23 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/matchme?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
-    <mapping resource="pojo/Paytype.hbm.xml"/>
-    <mapping resource="pojo/Customer.hbm.xml"/>
-    <mapping resource="pojo/Customerstatus.hbm.xml"/>
-    <mapping resource="pojo/Chat.hbm.xml"/>
-    <mapping resource="pojo/Login.hbm.xml"/>
-    <mapping resource="pojo/Cusupload.hbm.xml"/>
-    <mapping resource="pojo/Payment.hbm.xml"/>
-    <mapping resource="pojo/Contact.hbm.xml"/>
-    <mapping resource="pojo/Request.hbm.xml"/>
-    <mapping resource="pojo/Review.hbm.xml"/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--<property name="hibernate.connection.url">jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12261581?zeroDateTimeBehavior=convertToNull</property>-->
+        <property name="hibernate.connection.url">jdbc:mysql://35.193.145.30:3306/matchme?useSSL=no&amp;autoReconnect=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">cDEcsoh2hs6Dp6D9</property>
+        <mapping resource="pojo/Paytype.hbm.xml"/>
+        <mapping resource="pojo/Customer.hbm.xml"/>
+        <mapping resource="pojo/Customerstatus.hbm.xml"/>
+        <mapping resource="pojo/Chat.hbm.xml"/>
+        <mapping resource="pojo/Login.hbm.xml"/>
+        <mapping resource="pojo/Cusupload.hbm.xml"/>
+        <mapping resource="pojo/Payment.hbm.xml"/>
+        <mapping resource="pojo/Contact.hbm.xml"/>
+        <mapping resource="pojo/Subscribe.hbm.xml"/>
+        <mapping resource="pojo/Request.hbm.xml"/>
+        <mapping resource="pojo/Review.hbm.xml"/>
+    </session-factory>
 </hibernate-configuration>
